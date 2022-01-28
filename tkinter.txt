@@ -1,0 +1,120 @@
+Tkinter python 
+
+1.The very first tkinter code:
+
+from tkinter import *
+root= Tk()
+mylabel1=Label(root,text="hey what's up")
+mylabel1.pack()
+root.mainloop()
+
+
+2.  USING GRIDS IN TKINTER
+
+from tkinter import *
+root= Tk()
+mylabel1=Label(root,text="hey what's up")
+mylabel1.pack() # Should be commented out because , grid and pack dont go together. 
+mylabel1.grid(row=1,column=3)  #this is one way of writing grid
+mylabel2=Label(root,text="I am fine bro ").grid(row=1,column=4)  #this is another way of writing grid.
+root.mainloop()
+
+
+3.		BUTTONS
+
+from tkinter import *
+root= Tk()
+mybutton=Button(root,text="Click me!").pack()  #pack can be used in a single line to reduce codes.
+mybutton.pack() # another way of using pack  
+root.mainloop()
+
+>>>>>>>>>>>>			USSING PADDING IN BUTTONS
+
+from tkinter import *
+root= Tk()
+mybutton=Button(root,text="Click me!",padx=20,pady=30).pack()   #padx and pady are used to change the padding of button in x and y axis.
+root.mainloop()
+
+>>>>>>>>>>>>>            	MAKING THE BUTTON TO FUNCTION AFTER CLICKING ON IT
+
+from tkinter import *
+root= Tk()
+def myClick():
+    mylabel=Label(root,text="Look I just clicked the button!!").pack()
+
+mybutton=Button(root,text="Click me ass!",padx=30,pady=20,command=myClick).pack()
+#the command function inside button calls the function-named,"myClick" and then displays the text, Look I just........
+
+#NOTE: when the function,"myClick" is called parentheses isn't used and if use parentheses ,"myClick()" then Look I just.. prints first and then a button is displayed below.
+root.mainloop()
+
+>>>>>>>   CHANGING THE BACKGROUND COLOR  OF THE BUTTON AND THE TEXT -COLOR INSIDE THE BUTTON.
+
+mybutton=Button(root,text="Click me ass!",padx=30,pady=20,command=myClick,fg='orange',bg='red').pack()
+#fg changes text-color and bg chnages background color and also can uses hex-color-code like #00FFFF instead of red or orange.
+
+
+4.	CREATING INPUT FIELD
+
+from tkinter import *
+root= Tk()
+def myClick():
+    mylabel=Label(root,text="Look I just clicked the button!!").pack()
+
+mybutton=Button(root,text="Click me ass!",padx=30,pady=20,command=myClick,fg='orange',bg='#00FFFF').pack()
+
+e=Entry(root) #Creates an input field just below the button
+e.pack()
+root.mainloop()
+
+>>> CHANGING TEXTBOX WIDTH, BORDERWIDHT, BG-COLOR,TEXT-COLOR
+
+e=Entry(root,width=50,borderwidth=20,bg='pink',fg='yellow')
+
+>>> GETTING THE TEXTBOX TO WORK.
+
+from tkinter import *
+root= Tk()
+def myClick():
+    mylabel=Label(root,text=f"Hello {e.get()}").pack() #the get() function helps to store the content inside the textbox
+
+mybutton=Button(root,text="Enter your name",command=myClick).pack()
+e=Entry(root,width=50)
+e.pack()
+
+root.mainloop()
+   
+
+>>>> DISPLAYING SOME TEXT IN THE INPUT FIELD.
+
+from tkinter import *
+root= Tk()
+def myClick():
+    mylabel=Label(root,text=f"Hello {e.get()}").pack()
+
+mybutton=Button(root,text="Submit", command=myClick).pack()
+e=Entry(root,width=50)
+e.pack()
+e.insert(0,"Enter your name") #insert() function displays "enter your text" text inside the textbox
+
+root.mainloop()
+
+
+5.      ICONS,EXIT BUTTONS AND IMAGES
+
+>>> ICONS
+
+from tkinter import *
+root=Tk()
+root.iconbitmap('athens_pc.ico') //syntax of using icon  root.iconbitmap(path of the icon file).
+
+root.mainloop()
+
+>>> EXIT BUTTON
+ 
+	
+button_exit=Button(root,text="EXIT PROGRAM",command=root.quit).pack()
+
+
+
+
